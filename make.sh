@@ -11,11 +11,11 @@
 
 dir=~/Projects/dotfiles.git       # dotfiles directory
 olddir=~/.dotfiles_old             # old dotfiles backup directory
-files="bashrc wgetrc vimrc vim"    # list of files/folders to symlink in homedir
+files="bashrc gitconfig wgetrc vimrc vim" # list of files/folders to symlink in homedir
 
 ##########
 
-# create dotfiles_old in homedir
+# create .dotfiles_old in homedir
 echo -n "Creating $olddir for backup of any existing dotfiles in ~ ..."
 mkdir -p $olddir
 echo "done"
