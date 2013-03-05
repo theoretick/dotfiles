@@ -23,16 +23,18 @@ set number
 set ruler
 
 " better search
-set hlsearch
 set incsearch
+set hlsearch
+"unsets the "last search pattern" register by hitting return
+nnoremap <CR> :noh<CR><CR>
 
 " show cursor position with horiz line and
 " keep two visible lines below cursor at all times
 set cursorline
 set scrolloff=2
 
-" Make the command line two lines high and change the statusline display to
-" " something that looks useful.
+" Make the command line 2 lines high and change statusline display to
+" something that looks useful.
 set cmdheight=2
 set laststatus=2
 set showcmd
