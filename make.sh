@@ -11,7 +11,7 @@
 
 dir=~/Projects/dotfiles.git       # dotfiles directory
 olddir=~/.dotfiles_old             # old dotfiles backup directory
-files="bashrc gitconfig wgetrc vimrc vim" # list of files/folders to symlink in homedir
+files="aliases bashrc gitconfig wgetrc vimrc vim" # list of files/folders to symlink in homedir
 
 ##########
 

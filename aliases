@@ -1,0 +1,7 @@
+#
+# bash alias configuration
+
+# readability tweaks
+alias ll = 'ls -lah'
+alias df = 'df -h'
+alias du = 'du -h -d 2'
