@@ -20,3 +20,6 @@ export HISTCONTROL=ignoredups
 
 # Ignore same successive entries.
 export HISTCONTROL=ignoreboth
+
+###########
+
