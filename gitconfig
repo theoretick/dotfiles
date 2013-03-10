@@ -1,10 +1,7 @@
 [include]
         # for username and tokens
+	# note, this only works with git 1.7.10+
 	path = /Users/theoretick/.gitconfig.local
-#[user]
-#	name = lucas c
-#	user = theoretick
-#	email = mail@limitlesschannels.com
 [color]
 	ui = auto
 [color "branch"]
