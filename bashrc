@@ -22,4 +22,23 @@ export HISTCONTROL=ignoredups
 export HISTCONTROL=ignoreboth
 
 ###########
+# bash alias configuration
+###########
+
+# readability tweaks
+alias ll='ls -lah'
+alias df='df -h'
+alias du='du -h -d 2'
+alias grep='grep --color=auto'
+
+# safety tweaks
+alias cp='cp -i'
+alias rm='rm -i'
+
+# navigability tweaks
+alias ..='cd ..'
+alias ...='cd ..; cd ..'
+alias ....='cd ..; cd ..; cd ..'
+
+
 
