@@ -1,6 +1,6 @@
 [include]
-        # for username and tokens
 	# note, this only works with git 1.7.10+
+        # for username and tokens
 	path = /Users/theoretick/.gitconfig.local
 [color]
 	ui = auto
