@@ -1,5 +1,6 @@
 #
 # bash alias configuration
+#
 
 # readability tweaks
 alias ll = 'ls -lah'
@@ -10,6 +11,7 @@ alias rm = 'trash-cli'
 
 # safety tweaks
 alias cp = 'cp -i'
+alias rm = 'trash'
 
 # navigability tweaks
 alias ..='cd ..'
