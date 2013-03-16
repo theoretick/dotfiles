@@ -21,4 +21,4 @@ new ones from repo folder.
 - vimrc
 -- vim color and configs
 - wgetrc
-
+- post-commit (githook to take imagesnap photo and store in dropbox)
