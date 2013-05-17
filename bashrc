@@ -15,6 +15,9 @@
 # Add RVM to PATH for scripting
 PATH=$PATH:$HOME/.rvm/bin 
 
+# Add Todo.txt to PATH
+#PATH=$PATH:$HOME/.todo/
+
 # No duplicate lines in the history
 export HISTCONTROL=ignoredups
 
@@ -40,5 +43,12 @@ alias ..='cd ..'
 alias ...='cd ..; cd ..'
 alias ....='cd ..; cd ..; cd ..'
 
+# other aliases
+alias t='$HOME/.todo/todo.sh'
+
+# alias for hub to git
+eval "$(hub alias -s)"
 
 
+### Added by the Heroku Toolbelt
+export PATH="/usr/local/heroku/bin:$PATH"

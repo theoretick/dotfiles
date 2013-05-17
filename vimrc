@@ -4,14 +4,49 @@
 " url:  http://github.com/theoretick/dotfiles
 " desc: config file for Vim
 " """"""""""""""""""""""""""""""""""""""""""""
+
+set nocompatible
+filetype off
+
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+
+" let Vundle manage Vundle
+" required! 
+Bundle 'gmarik/vundle'
+
+" My Bundles here:
+"
+" original repos on github
+Bundle 'tpope/vim-fugitive'
+Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
+Bundle 'tpope/vim-rails.git'
+" vim-scripts repos
+Bundle 'L9'
+Bundle 'FuzzyFinder'
+" non github repos
+Bundle 'git://git.wincent.com/command-t.git'
+
+" required!
+filetype plugin indent on
+
+"
+" Brief help
+"  :BundleList		- list configured bundles
+"  :BundleInstall(!)	- install(update) bundles
+"  :BundleSearch(!) foo - search(or refresh cache first) for foo
+"  :BundleClean(!)	- confirm(or auto-approve) removal of unused bundles
+ 
+""""""OLD BEFORE VUNDLE """"""""""" 
+
 " enable colors
 syntax on
 colors molokai
 set bg=dark
 
 " filetype detection and plugin support
-filetype on
-filetype plugin on
+" filetype on
+" filetype plugin on
 
 " enable automatic title setting for terminals
 set title
