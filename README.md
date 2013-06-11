@@ -6,6 +6,8 @@ If you see anything you like, feel free to fork/grab away.
 Set up script forked and modified from Michael J Smalley
 (http://github.com/michaeljsmalley/dotfiles).
 
+UPDATE: old vim config, now using janus
+
 Some issues with the script right now
 - recursive vim in vimfolder
 - hopefully add var to pull all new files,
@@ -16,6 +18,7 @@ Backs up existing dotfiles to ~/dotfiles_old', and symlinks
 new ones from repo folder.
 
 ###Contains###
+- sublime config folder
 - bashrc
 - gitconfig (sans gitconfig.local w/ credentials)
 - vimrc
