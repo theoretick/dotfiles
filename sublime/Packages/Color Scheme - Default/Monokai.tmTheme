@@ -10,11 +10,11 @@
 <key>name</key>
 <string>mon_color</string>
 <key>scope</key>
-<string>mcol_EEAACCFF</string>
+<string>mcol_DDEEFFFF</string>
 <key>settings</key>
 <dict>
 <key>background</key>
-<string>#EEAACCFF</string>
+<string>#DDEEFFFF</string>
 <key>caret</key>
 <string>#000000FF</string>
 <key>foreground</key>
