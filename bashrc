@@ -18,6 +18,11 @@ PATH=$PATH:$HOME/.rvm/bin
 # Add Todo.txt to PATH
 #PATH=$PATH:$HOME/.todo/
 
+#define editor
+export VISUAL='subl -w'
+export EDITOR='vim'
+#export EDITOR='vim'
+
 # No duplicate lines in the history
 export HISTCONTROL=ignoredups
 
@@ -33,6 +38,9 @@ alias ll='ls -lah'
 alias df='df -h'
 alias du='du -h -d 2'
 alias grep='grep --color=auto'
+alias ln='ln -v'
+alias mkdir='mkdir -p'
+
 
 # safety tweaks
 alias cp='cp -i'
@@ -40,15 +48,14 @@ alias rm='rm -i'
 
 # navigability tweaks
 alias ..='cd ..'
-alias ...='cd ..; cd ..'
-alias ....='cd ..; cd ..; cd ..'
+alias ...='cd ../..'
+alias ....='cd ../../..'
 
 # other aliases
 alias t='$HOME/.todo/todo.sh'
 
 # alias for hub to git
 eval "$(hub alias -s)"
-
 
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
