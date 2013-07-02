@@ -13,7 +13,7 @@
 [ -z "$PS1" ] && return
 
 # Add RVM to PATH for scripting
-PATH=$PATH:$HOME/.rvm/bin 
+PATH=$PATH:$HOME/.rvm/bin
 
 # Add Todo.txt to PATH
 #PATH=$PATH:$HOME/.todo/
@@ -21,7 +21,6 @@ PATH=$PATH:$HOME/.rvm/bin
 #define editor
 export VISUAL='subl -w'
 export EDITOR='vim'
-#export EDITOR='vim'
 
 # No duplicate lines in the history
 export HISTCONTROL=ignoredups
@@ -41,7 +40,6 @@ alias grep='grep --color=auto'
 alias ln='ln -v'
 alias mkdir='mkdir -p'
 
-
 # safety tweaks
 alias cp='cp -i'
 alias rm='rm -i'
@@ -53,6 +51,7 @@ alias ....='cd ../../..'
 
 # other aliases
 alias t='$HOME/.todo/todo.sh'
+alias jsc='/System/Library/Frameworks/JavaScriptCore.framework/Versions/A/Resources/jsc'
 
 # alias for hub to git
 eval "$(hub alias -s)"
