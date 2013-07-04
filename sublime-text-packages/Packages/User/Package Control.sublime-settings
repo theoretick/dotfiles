@@ -2,18 +2,11 @@
 	"installed_packages":
 	[
 		"All Autocomplete",
-		"Color Highlighter",
 		"ColorPicker",
 		"Emmet",
 		"GitGutter",
-		"IndentGuides",
-		"LiveReload",
 		"Package Control",
 		"RubyTest",
-		"SideBarEnhancements",
-		"Solarized Light-Dark Toggle",
-		"SublimeCodeIntel",
-		"SublimeLinter",
 		"TrailingSpaces"
 	]
 }
