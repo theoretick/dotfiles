@@ -1,0 +1,35 @@
+#----------------------------------------------------------------------
+# ~/.aliases
+#----------------------------------------------------------------------
+
+# readability tweaks
+alias ll='ls -lahF'
+alias tree='tree -FC'
+alias ln='ln -v'
+alias df='df -h'
+alias du='du -h -d 2'
+alias grep='grep --color=auto'
+alias egrep='egrep --color=auto'
+alias fgrep='fgrep --color=auto'
+
+# usability tweaks
+alias mkdir='mkdir -p'
+
+# safety tweaks
+alias cp='cp -i'
+alias rm='rm -i'
+
+# navigability tweaks
+alias ..='cd ..'
+alias ...='cd ../..'
+alias ....='cd ../../..'
+
+# rails aliases
+alias be='bundle exec'
+alias rc='rails c'
+
+# other aliases
+alias tmux='TERM=screen-256color-bce tmux'
+alias pg='pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log'
+alias jsc='/System/Library/Frameworks/JavaScriptCore.framework/Versions/A/Resources/jsc'
+eval "$(hub alias -s)"

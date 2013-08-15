@@ -1,0 +1,26 @@
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" used by Janus for extra settings, along w/ .janus directory
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" enable colors
+" colo detailed
+set bg=dark
+
+" enable automatic title setting for terminals
+set title
+set titleold="Terminal"
+set titlestring=%F
+
+" ruler to keep track of cursor
+" set ruler
+
+" show cursor position w/ horiz line &
+set cursorline
+
+" better search, unsets 'last search pattern' register w/ return
+nnoremap <CR> :noh<CR><CR>
+
+" keep 2 visible lines below cursor at all times
+" janus' default is only 1 (i think...)
+set scrolloff=2
+

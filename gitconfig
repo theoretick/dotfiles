@@ -1,11 +1,12 @@
-#[include]
-	# note, this only works with git 1.7.10+
-        # for username and tokens
-#	path = /Users/theoretick/.gitconfig.local
+#----------------------------------------------------------------------
+# ~/.gitconfig
+#----------------------------------------------------------------------
+
 [user]
   name = theoretick
   user = theoretick
-  email = mail@limitlesschannels.com
+	email = me@lucascharles.me
+
 [color]
 	ui = auto
 [color "branch"]
@@ -20,5 +21,17 @@
 	added = yellow
 	changed = green
 	untracked = cyan
+
 [credential]
 	helper = osxkeychain
+
+[alias]
+  lg1 = log --pretty=oneline --abbrev-commit --branches=* --graph --decorate --color
+  wc1 = whatchanged --graph --abbrev-commit --decorate --date=relative --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all
+  lg2 = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)' --all
+  wc2 = whatchanged --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)' --all
+  lg3 = log --graph --date-order -C -M --pretty=format:"<%h> %ad [%an] %Cgreen%d%Creset %s" --all --date=short
+  wc3 = whatchanged --graph --date-order -C -M --pretty=format:"<%h> %ad [%an] %Cgreen%d%Creset %s" --all --date=short
+  lg = !"git wc2"
+  wc = !"git wc1"
+
