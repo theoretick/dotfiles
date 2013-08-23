@@ -2,6 +2,8 @@
 # ~/.bashrc
 #----------------------------------------------------------------------
 
+source ~/.git-completion.sh
+
 # If not running interactively, don't do anything
 [ -z "$PS1" ] && return
 
