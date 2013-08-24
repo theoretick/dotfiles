@@ -2,7 +2,13 @@
 # ~/.bashrc
 #----------------------------------------------------------------------
 
-source ~/.git-completion.sh
+source ~/.git-completion
+
+export GITAWAREPROMPT=~/.git-aware-prompt
+source $GITAWAREPROMPT/main.sh
+export PS1="\u@\h \w \[$txtcyn\]\$git_branch\[$txtred\]\$git_dirty\[$txtrst\]\$ "
+
+#---
 
 # If not running interactively, don't do anything
 [ -z "$PS1" ] && return
