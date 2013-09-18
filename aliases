@@ -24,6 +24,10 @@ alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'
 
+# git aliases
+alias gs='git status'
+#alias ga='git add'
+
 # rails aliases
 alias be='bundle exec'
 alias rc='rails c'
