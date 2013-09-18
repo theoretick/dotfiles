@@ -3,8 +3,9 @@
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " enable colors
-" colo detailed
-set bg=dark
+set background=dark
+" :colorscheme solarized
+colorscheme slate
 
 " enable automatic title setting for terminals
 set title
