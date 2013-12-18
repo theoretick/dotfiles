@@ -6,17 +6,13 @@ source ~/.git-completion
 
 export GITAWAREPROMPT=~/.git-aware-prompt
 source $GITAWAREPROMPT/main.sh
-export PS1="\u@\h \w \[$txtcyn\]\$git_branch\[$txtred\]\$git_dirty\[$txtrst\]\$ "
+#export PS1="\u@\h \w \[$txtcyn\]\$git_branch\[$txtred\]\$git_dirty\[$txtrst\]\$ "
+export PS1="\n\[\e[0;36m\]┌─(\[\e[0m\]\[\e[1;33m\]\u\[\e[0m\]\[\e[1;36m\]@\[\e[0m\]\[\e[1;33m\]\h\[\e[0m\]\[\e[0;36m\])─[\[\e[0m\]\[\e[1;34m\]\w\[\e[0m\]\[\e[0;36m\]]\[\e[0;36m\]-\[\e[0m\]\[\e[0;31m\]\t\[\e[0m\]\[\e[0;36m\]\[\e[0m\]\n\[\e[0;36m\]└─\[\e[0m\]\[\e[1;37m\]\[$txtcyn\]\$git_branch\[$txtred\]\$git_dirty\[$txtrst\]\$\[\e[0m\]\[\e[0;36m\] \[\e[0m\]"
 
 #---
 
 # If not running interactively, don't do anything
 [ -z "$PS1" ] && return
-
-# Add RVM to PATH for scripting
-#PATH=$PATH:$HOME/.rvm/bin
-# Add Heroku Toolbelt to path
-export PATH="/usr/local/heroku/bin:$PATH"
 
 # define editor
 export VISUAL='subl -w'

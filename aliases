@@ -24,15 +24,16 @@ alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'
 
-# git aliases
-alias gs='git status'
-#alias ga='git add'
-
 # rails aliases
 alias be='bundle exec'
 alias rc='rails c'
 
+# git
+alias gs='git status'
+alias ga='git add'
+
 # other aliases
+alias macvim='mvim'
 alias tmux='TERM=screen-256color-bce tmux'
 alias pg='pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log'
 alias jsc='/System/Library/Frameworks/JavaScriptCore.framework/Versions/A/Resources/jsc'
