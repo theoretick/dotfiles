@@ -14,7 +14,7 @@ export PS1="\u@\h \w \[$txtcyn\]\$git_branch\[$txtred\]\$git_dirty\[$txtrst\]\$ 
 [ -z "$PS1" ] && return
 
 # Add RVM to PATH for scripting
-PATH=$PATH:$HOME/.rvm/bin
+#PATH=$PATH:$HOME/.rvm/bin
 # Add Heroku Toolbelt to path
 export PATH="/usr/local/heroku/bin:$PATH"
 
@@ -28,3 +28,11 @@ export HISTCONTROL=ignoredups
 # Ignore same successive entries.
 export HISTCONTROL=ignoreboth
 
+### Added by the Heroku Toolbelt
+export PATH="/usr/local/heroku/bin:$PATH"
+
+# add postgres to path
+export PATH="/Applications/Postgres.app/Contents/MacOS/bin:$PATH"
+
+# add mysql to path
+export PATH=$PATH:$(brew --prefix mysql)/bin
