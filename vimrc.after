@@ -4,19 +4,21 @@
 
 " enable colors
 set background=dark
-" :colorscheme solarized
 colorscheme slate
+
+"""
+set nocompatible
+set ruler
+set showcmd
+"""
+
+" show cursor position w/ horiz line
+set cursorline
 
 " enable automatic title setting for terminals
 set title
 set titleold="Terminal"
 set titlestring=%F
-
-" ruler to keep track of cursor
-" set ruler
-
-" show cursor position w/ horiz line &
-set cursorline
 
 " better search, unsets 'last search pattern' register w/ return
 nnoremap <CR> :noh<CR><CR>
@@ -25,3 +27,55 @@ nnoremap <CR> :noh<CR><CR>
 " janus' default is only 1 (i think...)
 set scrolloff=2
 
+" Puts a line on column 80 of the screen. This is a good indicator for methods
+" that are too long
+set colorcolumn=80
+
+" Set encoding
+set encoding=utf-8
+
+" Whitespace stuff
+set nowrap
+set tabstop=2
+set shiftwidth=2
+set softtabstop=2
+set autoindent
+set expandtab
+" set list listchars=tab:\ \ ,trail:·
+" Disables autoindent for current file (helpful for XML and HTML)
+nnoremap <F8> :setl noai nocin nosi inde=<CR>
+
+" Tab completion
+set wildmode=list:longest,list:full
+set wildignore+=*/.vagrant/*,*/.bundle/*,*.o,*.obj,.git,*.rbc
+
+function s:setupWrapping()
+  set wrap
+  set wm=2
+  set textwidth=80
+endfunction
+
+function s:setupMarkup()
+  call s:setupWrapping()
+  map <buffer> <Leader>p :Mm <CR>
+endfunction
+
+" make uses real tabs
+au FileType make                                     set noexpandtab
+
+" Thorfile, Rakefile, Vagrantfile and Gemfile are Ruby
+au BufRead,BufNewFile {Gemfile,Rakefile,Vagrantfile,Thorfile,config.ru}    set ft=ruby
+
+" md, markdown, and mk are markdown and define buffer-local preview
+au BufRead,BufNewFile *.{md,markdown,mdown,mkd,mkdn} call s:setupMarkup()
+
+au BufRead,BufNewFile *.txt call s:setupWrapping()
+
+" make python follow PEP8 ( http://www.python.org/dev/peps/pep-0008/ )
+au FileType python  set tabstop=4 textwidth=79
+
+" allow backspacing over everything in insert mode
+set backspace=indent,eol,start
+
+" load the plugin and indent settings for the detected filetype
+filetype plugin indent on
