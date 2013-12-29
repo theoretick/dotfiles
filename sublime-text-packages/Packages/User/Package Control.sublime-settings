@@ -3,11 +3,9 @@
 	"installed_packages":
 	[
 		"All Autocomplete",
-		"ColorPicker",
 		"Emmet",
 		"GitGutter",
 		"Package Control",
-		"RubyTest",
 		"TrailingSpaces"
 	]
 }
