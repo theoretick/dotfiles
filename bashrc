@@ -19,7 +19,7 @@ export PS1=" \n\[$txtcyn\]\w \[$txtwht\]\$git_branch\[$txtred\]\$git_dirty\[$txt
 [ -z "$PS1" ] && return
 
 # define editor
-export VISUAL='subl -w'
+#export VISUAL='subl -w'
 export EDITOR='vim'
 
 # No duplicate lines in the history
@@ -33,6 +33,3 @@ export PATH="/usr/local/heroku/bin:$PATH"
 
 # add postgres to path
 export PATH="/Applications/Postgres.app/Contents/MacOS/bin:$PATH"
-
-# add mysql to path
-export PATH=$PATH:$(brew --prefix mysql)/bin
