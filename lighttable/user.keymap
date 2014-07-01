@@ -11,7 +11,10 @@
 ;; want to do in between the square brackets (e.g. type "editor").
 
 {
- :- {:app {"pmeta-l" [:goto-line line]}}
+ :- {:editor {
+           "pmeta-l" [:goto-line line]
+           "pmeta-enter" [:eval-editor-form]
+           "pmeta-shift-enter" [:eval-editor]}}
  :+ {:app {
            ;; sublime style shortcuts
            "pmeta-shift-p" [:show-commandbar-transient]
@@ -20,6 +23,8 @@
            "ctrl-g" [:goto-line line]
            "pmeta-l" [:editor.select-line]
            "pmeta-/" [:toggle-comment-selection]
+           "pmeta-enter" [:editor.sublime.insertLineAfter]
+           "pmeta-shift-enter" [:editor.sublime.insertLineBefore]
 
            ;; miscellaneous
            "pmeta-`" [:toggle-console]}
