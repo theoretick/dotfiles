@@ -10,13 +10,25 @@
 ;; of all the commands you can execute, start typing a word related to the thing you
 ;; want to do in between the square brackets (e.g. type "editor").
 
-{:+ {:app {"pmeta-shift-p" [:show-commandbar-transient]
+{
+ :- {:editor {
+           "pmeta-l" [:goto-line line]
+           "pmeta-enter" [:eval-editor-form]
+           "pmeta-shift-enter" [:eval-editor]}}
+ :+ {:app {
+           ;; sublime style shortcuts
+           "pmeta-shift-p" [:show-commandbar-transient]
            "pmeta-p" [:navigate-workspace-transient]
            "pmeta-k-b" [:workspace.show]
-           "pmeta-`" [:toggle-console]
            "ctrl-g" [:goto-line line]
            "pmeta-l" [:editor.select-line]
-           "pmeta-/" [:toggle-comment-selection]}
+           "pmeta-/" [:toggle-comment-selection]
+           "pmeta-enter" [:editor.sublime.insertLineAfter]
+           "pmeta-shift-enter" [:editor.sublime.insertLineBefore]
+
+           ;; miscellaneous
+           "pmeta-`" [:toggle-console]}
+
      :editor {"alt-w" [:editor.watch.watch-selection]
               "alt-shift-w" [:editor.watch.unwatch]}}
- :- {:app {"pmeta-l" [:goto-line line]}}}
+}
