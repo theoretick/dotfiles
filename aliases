@@ -25,7 +25,9 @@ alias ...='cd ../..'
 alias ....='cd ../../..'
 
 # rails aliases
+alias b='bundle'
 alias be='bundle exec'
+alias bet='RAILS_ENV=test bundle exec'
 alias rc='rails c'
 
 # git
