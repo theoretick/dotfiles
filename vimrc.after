@@ -2,34 +2,35 @@
 " used by Janus for extra settings, along w/ .janus directory
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-" enable colors
-set background=dark
-colorscheme slate
+" This makes RVM work inside Vim. I have no idea why.
+set shell=bash
+
+" Prevent Vim from clobbering the scrollback buffer. See
+" http://www.shallowsky.com/linux/noaltscreen.html
+set t_ti= t_te=
+
+" If a file is changed outside of vim, automatically reload it without asking
+set autoread
+
+" keep 2 visible lines below cursor at all times
+" janus' default is only 1 (i think...)
+set scrolloff=3
 
 """
 set nocompatible
 set ruler
 set showcmd
-"""
-
 " show cursor position w/ horiz line
 set cursorline
+
+" Puts a line on column 80 of the screen. This is a good indicator for methods
+" that are too long
+set colorcolumn=80
 
 " enable automatic title setting for terminals
 set title
 set titleold="Terminal"
 set titlestring=%F
-
-" better search, unsets 'last search pattern' register w/ return
-nnoremap <CR> :noh<CR><CR>
-
-" keep 2 visible lines below cursor at all times
-" janus' default is only 1 (i think...)
-set scrolloff=2
-
-" Puts a line on column 80 of the screen. This is a good indicator for methods
-" that are too long
-set colorcolumn=80
 
 " Set encoding
 set encoding=utf-8
@@ -41,41 +42,94 @@ set shiftwidth=2
 set softtabstop=2
 set autoindent
 set expandtab
-" set list listchars=tab:\ \ ,trail:·
-" Disables autoindent for current file (helpful for XML and HTML)
+
+" Disables autoindent for current file
 nnoremap <F8> :setl noai nocin nosi inde=<CR>
 
 " Tab completion
 set wildmode=list:longest,list:full
 set wildignore+=*/.vagrant/*,*/.bundle/*,*.o,*.obj,.git,*.rbc
 
-function s:setupWrapping()
-  set wrap
-  set wm=2
-  set textwidth=80
-endfunction
-
-function s:setupMarkup()
-  call s:setupWrapping()
-  map <buffer> <Leader>p :Mm <CR>
-endfunction
-
-" make uses real tabs
-au FileType make                                     set noexpandtab
-
 " Thorfile, Rakefile, Vagrantfile and Gemfile are Ruby
 au BufRead,BufNewFile {Gemfile,Rakefile,Vagrantfile,Thorfile,config.ru}    set ft=ruby
-
-" md, markdown, and mk are markdown and define buffer-local preview
-au BufRead,BufNewFile *.{md,markdown,mdown,mkd,mkdn} call s:setupMarkup()
-
-au BufRead,BufNewFile *.txt call s:setupWrapping()
 
 " make python follow PEP8 ( http://www.python.org/dev/peps/pep-0008/ )
 au FileType python  set tabstop=4 textwidth=79
 
-" allow backspacing over everything in insert mode
-set backspace=indent,eol,start
+" Save a file as root (,W)
+noremap <leader>W :w !sudo tee % > /dev/null<CR>
 
-" load the plugin and indent settings for the detected filetype
-filetype plugin indent on
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" COLOR
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+set t_Co=256 " 256 colors
+set background=dark
+colorscheme solarized
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" STATUS LINE
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+:set statusline=%<%f\ (%{&ft})\ %-4(%m%)%=%-19(%3l,%02c%03V%)
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" MISCELLANEOUS KEYMAPS
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Move around splits with <c-hjkl>
+nnoremap <c-j> <c-w>j
+nnoremap <c-k> <c-w>k
+nnoremap <c-h> <c-w>h
+nnoremap <c-l> <c-w>l
+
+" better search, unsets 'last search pattern' register w/ return
+nnoremap <CR> :noh<CR><CR>
+
+" remap jj in insert mode to <ESC> to go into normal mode
+inoremap jj <ESC>
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" CtrlP settings
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" CtrlP should only search tracked files
+let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files']
+
+" Sane Ignore For ctrlp
+let g:ctrlp_custom_ignore = {
+  \ 'dir':  '\.git$\|\.hg$\|\.svn$\|\.yardoc\|public\/images\|public\/system\|data\|log\|tmp$',
+  \ 'file': '\.exe$\|\.so$\|\.dat$'
+  \ }
+
+" default behavior set to open-in-tab
+let g:ctrlp_prompt_mappings = {
+    \ 'AcceptSelection("e")': ['<c-t>'],
+    \ 'AcceptSelection("t")': ['<cr>', '<2-LeftMouse>'],
+    \ }
+
+" Normal CtrlP
+" nnoremap <silent> <Leader>t :CtrlP<cr>
+" Flush then CtrlP
+nnoremap <silent> <leader>t :ClearCtrlPCache<cr>\|:CtrlP<cr>
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" MULTIPURPOSE TAB KEY
+" Indent if we're at the beginning of a line. Else, do completion.
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+function! InsertTabWrapper()
+    let col = col('.') - 1
+    if !col || getline('.')[col - 1] !~ '\k'
+        return "\<tab>"
+    else
+        return "\<c-p>"
+    endif
+endfunction
+inoremap <tab> <c-r>=InsertTabWrapper()<cr>
+inoremap <s-tab> <c-n>
+
+" ================ Persistent Undo ==================
+" Keep undo history across sessions, by storing in file.
+" Only works all the time.
+if has('persistent_undo')
+  silent !mkdir ~/.vim/backups > /dev/null 2>&1
+  set undodir=~/.vim/backups
+  set undofile
+endif
+
