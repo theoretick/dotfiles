@@ -15,6 +15,17 @@
            "pmeta-l" [:goto-line line]
            "pmeta-enter" [:eval-editor-form]
            "pmeta-shift-enter" [:eval-editor]}}
+
+     ;; Disable the frackin auto-paren-wrap behavior
+     :editor.keys.normal {"\"" [(:editor.repeat-pair "\"")]
+                          "(" [(:editor.open-pair "(")]
+                          ")" [(:editor.close-pair ")")]
+                          "[" [(:editor.open-pair "[")]
+                          "{" [(:editor.open-pair "{")]
+                          "]" [(:editor.close-pair "]")]
+                          "}" [(:editor.close-pair "}")]
+                          "backspace" [:editor.backspace-pair]}}
+
  :+ {:app {
            ;; sublime style shortcuts
            "pmeta-shift-p" [:show-commandbar-transient]
