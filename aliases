@@ -25,7 +25,9 @@ alias ...='cd ../..'
 alias ....='cd ../../..'
 
 # rails aliases
+alias b='bundle'
 alias be='bundle exec'
+alias bet='RAILS_ENV=test bundle exec'
 alias rc='rails c'
 
 # git
@@ -33,10 +35,15 @@ alias gs='git status'
 alias ga='git add'
 alias gc='git checkout'
 
+# postgres
+alias pg='pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log'
+alias pglog='tail -100f /usr/local/var/postgres/server.log'
+alias pgstart='launchctl load ~/Library/LaunchAgents/homebrew.mxcl.postgresql.plist'
+alias pgstop='launchctl unload ~/Library/LaunchAgents/homebrew.mxcl.postgresql.plist'
+
 # other aliases
 alias macvim='mvim'
 alias tmux='TERM=screen-256color-bce tmux'
-alias pg='pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log'
 alias jsc='/System/Library/Frameworks/JavaScriptCore.framework/Versions/A/Resources/jsc'
 eval "$(hub alias -s)"
 
