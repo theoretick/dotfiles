@@ -2,7 +2,6 @@
 # ~/.bashrc
 #----------------------------------------------------------------------
 
-source ~/.git-completion
 source ~/.aliases
 
 export GITAWAREPROMPT=~/.git-aware-prompt

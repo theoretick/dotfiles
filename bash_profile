@@ -13,5 +13,16 @@ export PATH=/usr/local/share/npm/bin:$PATH
 export CLICOLOR=1
 export LSCOLORS=Cxfxcxdxbxegedabagacad
 
+if [ -f ~/.git-completion.bash ]; then
+  . ~/.git-completion.bash
+fi
+
+if which rbenv > /dev/null; then
+    eval "$(rbenv init -)";
+else
+    puterr "rbenv not installed"
+    exit 1
+fi
+
 # monkeyhack to include bashrc as well
 [[ -r ~/.bashrc ]] && . ~/.bashrc
