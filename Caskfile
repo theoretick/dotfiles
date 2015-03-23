@@ -15,6 +15,7 @@ cask install iterm2
 cask install java
 cask install postgres
 cask install rescuetime
+cask install rdm
 cask install steam
 cask install utorrent
 cask install vagrant
