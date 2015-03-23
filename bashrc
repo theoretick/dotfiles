@@ -23,12 +23,8 @@ export EDITOR='vim'
 
 # No duplicate lines in the history
 export HISTCONTROL=ignoredups
-
-# Ignore same successive entries.
+# Ignore same/successive entries.
 export HISTCONTROL=ignoreboth
-
-### Added by the Heroku Toolbelt
-export PATH="/usr/local/heroku/bin:$PATH"
 
 # add postgres to path
 export PATH="/Applications/Postgres.app/Contents/MacOS/bin:$PATH"
