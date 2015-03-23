@@ -13,8 +13,7 @@ brew bundle
 brew bundle Caskfile
 
 ## Setup Git
-git config --global user.name "theoretick"
-git config --global user.email me@lucascharles.me
+ln -s "$(pwd)/gitconfig" $HOME/.gitconfig
 
 ## git completion
 
@@ -37,3 +36,15 @@ rbenv rehash
 
 ## setup osx settings
 bash ./osx-setup
+
+## linkage
+ln -s "$(dirname $0)/aliases" $HOME/.aliases
+ln -s "$(dirname $0)/bash_profile" $HOME/.bash_profile
+ln -s "$(dirname $0)/bashrc" $HOME/.bashrc
+ln -s "$(dirname $0)/wgetrc" $HOME/.wgetrc
+ln -s "$(dirname $0)/inputrc" $HOME/.inputrc
+ln -s "$(dirname $0)/tmux.conf" $HOME/.tmux.conf
+ln -s "$(dirname $0)/git-aware-prompt" $HOME/.git-aware-prompt
+ln -s "$(dirname $0)/git-completion" $HOME/.git-completion
+
+ln -s "$(dirname $0)/KeyBindings" $HOME/Library/KeyBindings
