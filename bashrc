@@ -2,7 +2,6 @@
 # ~/.bashrc
 #----------------------------------------------------------------------
 
-source ~/.git-completion
 source ~/.aliases
 
 export GITAWAREPROMPT=~/.git-aware-prompt
@@ -19,13 +18,11 @@ export PS1=" \n\[$txtcyn\]\w \[$txtwht\]\$git_branch\[$txtred\]\$git_dirty\[$txt
 [ -z "$PS1" ] && return
 
 # define editor
-#export VISUAL='subl -w'
 export EDITOR='vim'
 
 # No duplicate lines in the history
-export HISTCONTROL=ignoredups
-
 # Ignore same successive entries.
+export HISTCONTROL=ignoredups
 export HISTCONTROL=ignoreboth
 
 ### Added by the Heroku Toolbelt
