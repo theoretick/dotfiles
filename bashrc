@@ -21,12 +21,9 @@ export PS1=" \n\[$txtcyn\]\w \[$txtwht\]\$git_branch\[$txtred\]\$git_dirty\[$txt
 export EDITOR='vim'
 
 # No duplicate lines in the history
-# Ignore same successive entries.
 export HISTCONTROL=ignoredups
+# Ignore same/successive entries.
 export HISTCONTROL=ignoreboth
-
-### Added by the Heroku Toolbelt
-export PATH="/usr/local/heroku/bin:$PATH"
 
 # add postgres to path
 export PATH="/Applications/Postgres.app/Contents/MacOS/bin:$PATH"
