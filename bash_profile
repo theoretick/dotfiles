@@ -22,15 +22,13 @@ fi
 if which rbenv > /dev/null; then
     eval "$(rbenv init -)";
 else
-    puterr "rbenv not installed"
-    exit 1
+    echo "rbenv not installed"
 fi
 
 if which dinghy > /dev/null; then
   eval "$(dinghy shellinit)"
 else
-  puterr "dinghy not installed"
-  exit 1
+  echo "dinghy not installed"
 fi
 
 # monkeyhack to include bashrc as well
