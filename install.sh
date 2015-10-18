@@ -6,11 +6,7 @@ ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/
 brew doctor
 
 # install brews with Brewfile
-brew tap homebrew/boneyard
 brew bundle
-
-# install casks with Caskfile
-brew bundle Caskfile
 
 ## Setup Git
 ln -s "$(pwd)/gitconfig" $HOME/.gitconfig
@@ -37,7 +33,7 @@ rbenv rehash
 ## setup osx settings
 bash ./osx-setup
 
-## linkage
+# linkage
 ln -s "$(dirname $0)/aliases" $HOME/.aliases
 ln -s "$(dirname $0)/bash_profile" $HOME/.bash_profile
 ln -s "$(dirname $0)/bashrc" $HOME/.bashrc

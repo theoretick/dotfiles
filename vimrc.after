@@ -46,6 +46,9 @@ set expandtab
 " Disables autoindent for current file
 nnoremap <F8> :setl noai nocin nosi inde=<CR>
 
+" Execute the current file with leader-r
+nnoremap <leader>r :!%:p<Enter>
+
 " Tab completion
 set wildmode=list:longest,list:full
 set wildignore+=*/.vagrant/*,*/.bundle/*,*.o,*.obj,.git,*.rbc

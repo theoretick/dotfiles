@@ -20,7 +20,7 @@
 	meta = yellow bold
 	frag = magenta bold
 	old = red bold
-	new = green bold
+	new = green
 [color "status"]
 	added = yellow
 	changed = green
@@ -35,3 +35,5 @@
   wc3 = whatchanged --graph --date-order -C -M --pretty=format:"<%h> %ad [%an] %Cgreen%d%Creset %s" --all --date=short
   lg = !"git wc2"
   wc = !"git wc1"
+  update = pull upstream master
+  uncommit = git reset --soft HEAD~1

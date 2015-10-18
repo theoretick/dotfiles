@@ -5,7 +5,6 @@
 install ack
 install autoconf
 install automake
-install brew-cask
 install git
 install hub
 install jpeg

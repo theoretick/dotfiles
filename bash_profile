@@ -24,5 +24,14 @@ else
     exit 1
 fi
 
+if which dinghy > /dev/null; then
+  eval "$(dinghy shellinit)"
+else
+  puterr "dinghy not installed"
+  exit 1
+fi
+
 # monkeyhack to include bashrc as well
 [[ -r ~/.bashrc ]] && . ~/.bashrc
+
+test -e ${HOME}/.iterm2_shell_integration.bash && source ${HOME}/.iterm2_shell_integration.bash
