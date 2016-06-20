@@ -15,7 +15,7 @@
 	<key>AppleSmoothFixedFontsSizeThreshold</key>
 	<integer>1</integer>
 	<key>AutoHideTmuxClientSession</key>
-	<false/>
+	<true/>
 	<key>CheckTestRelease</key>
 	<true/>
 	<key>ClosingHotkeySwitchesSpaces</key>
@@ -621,10 +621,12 @@
 	<true/>
 	<key>MaxVertically</key>
 	<false/>
+	<key>NSFontPanelAttributes</key>
+	<string>1, 4</string>
 	<key>NSNavLastRootDirectory</key>
-	<string>~/code/dotfiles.git/iterm-config</string>
+	<string>~/code/dotfiles/iterm-config</string>
 	<key>NSNavPanelExpandedSizeForOpenMode</key>
-	<string>{712, 448}</string>
+	<string>{712, 459}</string>
 	<key>NSQuotedKeystrokeBinding</key>
 	<string></string>
 	<key>NSRepeatCountBinding</key>
@@ -655,10 +657,12 @@
 		<key>TB Is Shown</key>
 		<integer>1</integer>
 	</dict>
+	<key>NSWindow Frame NSFontPanel</key>
+	<string>792 152 510 233 0 0 1440 877 </string>
 	<key>NSWindow Frame Preferences</key>
-	<string>177 195 606 456 0 0 1440 877 </string>
+	<string>269 197 606 456 0 0 1440 877 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>214 50 570 452 0 0 1440 877 </string>
+	<string>0 988 2560 429 0 0 2560 1417 </string>
 	<key>New Bookmarks</key>
 	<array>
 		<dict>
@@ -834,7 +838,7 @@
 			<key>Blink Allowed</key>
 			<false/>
 			<key>Blinking Cursor</key>
-			<false/>
+			<true/>
 			<key>Blur</key>
 			<false/>
 			<key>Blur Radius</key>
@@ -877,7 +881,7 @@
 				<real>0.0</real>
 			</dict>
 			<key>Cursor Type</key>
-			<integer>2</integer>
+			<integer>1</integer>
 			<key>Custom Command</key>
 			<string>No</string>
 			<key>Custom Directory</key>
@@ -1359,57 +1363,11 @@
 					<key>action</key>
 					<string>GrowlTrigger</string>
 					<key>parameter</key>
-					<string>Specs Passed!</string>
+					<string>Listening on \1</string>
 					<key>partial</key>
 					<true/>
 					<key>regex</key>
-					<string>^[0-9][0-9]*\sexamples*,\s0\sfailures*$</string>
-				</dict>
-				<dict>
-					<key>action</key>
-					<string>ScriptTrigger</string>
-					<key>parameter</key>
-					<string>osascript -e 'say "ca ching!"'</string>
-					<key>regex</key>
-					<string>^[0-9][0-9]*\sexamples*,\s0\sfailures*$</string>
-				</dict>
-				<dict>
-					<key>action</key>
-					<string>GrowlTrigger</string>
-					<key>parameter</key>
-					<string>Specs Failed! \1 spec failures</string>
-					<key>partial</key>
-					<true/>
-					<key>regex</key>
-					<string>^[0-9][0-9]*\sexamples*,\s([1-9][0-9]*)\sfailures*$</string>
-				</dict>
-				<dict>
-					<key>action</key>
-					<string>ScriptTrigger</string>
-					<key>parameter</key>
-					<string>osascript -e 'say "fatality!"'</string>
-					<key>regex</key>
-					<string>^[0-9][0-9]*\sexamples*,\s([1-9][0-9]*)\sfailures*$</string>
-				</dict>
-				<dict>
-					<key>action</key>
-					<string>GrowlTrigger</string>
-					<key>parameter</key>
-					<string>Specs Passed!</string>
-					<key>partial</key>
-					<true/>
-					<key>regex</key>
-					<string>^[0-9][0-9]*\sruns.*assertions,\s0\sfailures,\s0\serrors.*$</string>
-				</dict>
-				<dict>
-					<key>action</key>
-					<string>GrowlTrigger</string>
-					<key>parameter</key>
-					<string>Specs Failed! \1 spec failures</string>
-					<key>partial</key>
-					<true/>
-					<key>regex</key>
-					<string>^[0-9][0-9]*\sruns.*assertions,\s[1-9][0-9]*\sfailures,\s0\serrors.*$</string>
+					<string>Listening\son\s(http|tcp:\/\/0.0.0.0:\d\d\d\d)</string>
 				</dict>
 			</array>
 			<key>Unlimited Scrollback</key>
@@ -1429,7 +1387,7 @@
 			<key>Window Type</key>
 			<integer>0</integer>
 			<key>Working Directory</key>
-			<string>/Users/lucas</string>
+			<string>/Users/theoretick</string>
 		</dict>
 		<dict>
 			<key>ASCII Anti Aliased</key>
@@ -1604,7 +1562,7 @@
 			<key>Blink Allowed</key>
 			<false/>
 			<key>Blinking Cursor</key>
-			<false/>
+			<true/>
 			<key>Blur</key>
 			<true/>
 			<key>Blur Radius</key>
@@ -1618,6 +1576,10 @@
 				<key>Red Component</key>
 				<real>0.50599193572998047</real>
 			</dict>
+			<key>Bound Hosts</key>
+			<array>
+				<string>discussitapp.com</string>
+			</array>
 			<key>Character Encoding</key>
 			<integer>4</integer>
 			<key>Close Sessions On End</key>
@@ -1645,7 +1607,7 @@
 				<real>0.0</real>
 			</dict>
 			<key>Cursor Type</key>
-			<integer>2</integer>
+			<integer>1</integer>
 			<key>Custom Command</key>
 			<string>No</string>
 			<key>Custom Directory</key>
@@ -1978,7 +1940,7 @@
 			<key>Rows</key>
 			<integer>25</integer>
 			<key>Screen</key>
-			<integer>0</integer>
+			<integer>-2</integer>
 			<key>Scrollback Lines</key>
 			<integer>0</integer>
 			<key>Scrollback With Status Bar</key>
@@ -2153,7 +2115,7 @@
 					<key>partial</key>
 					<true/>
 					<key>regex</key>
-					<string>^[0-9][0-9]*\sexamples*,\s([1-9][0-9]*)\sfailures*$</string>
+					<string>^[0-9][0-9]*\sexamples*,\s([1-9][0-9]*)\sfailures.*$</string>
 				</dict>
 				<dict>
 					<key>action</key>
@@ -2164,6 +2126,46 @@
 					<true/>
 					<key>regex</key>
 					<string>^[0-9][0-9]*\sruns.*assertions,\s[1-9][0-9]*\sfailures,\s0\serrors.*$</string>
+				</dict>
+				<dict>
+					<key>action</key>
+					<string>GrowlTrigger</string>
+					<key>parameter</key>
+					<string>Specs Passed!</string>
+					<key>partial</key>
+					<true/>
+					<key>regex</key>
+					<string>.*0\sfailures,\s0\serrors.*</string>
+				</dict>
+				<dict>
+					<key>action</key>
+					<string>GrowlTrigger</string>
+					<key>parameter</key>
+					<string>Specs Error: \1 failures \2 errors</string>
+					<key>partial</key>
+					<true/>
+					<key>regex</key>
+					<string>.*assertions,\s([1-9]+)\sfailures,\s([1-9]+)\serrors.*</string>
+				</dict>
+				<dict>
+					<key>action</key>
+					<string>GrowlTrigger</string>
+					<key>parameter</key>
+					<string>Specs Error: \1 errors</string>
+					<key>partial</key>
+					<true/>
+					<key>regex</key>
+					<string>.*assertions,\s0\sfailures,\s([1-9]+)\serrors.*</string>
+				</dict>
+				<dict>
+					<key>action</key>
+					<string>GrowlTrigger</string>
+					<key>parameter</key>
+					<string>Specs Failed: \1 failures</string>
+					<key>partial</key>
+					<true/>
+					<key>regex</key>
+					<string>.*assertions,\s([1-9]+)\sfailures,\s0\serrors.*</string>
 				</dict>
 			</array>
 			<key>Unlimited Scrollback</key>
@@ -2183,7 +2185,7 @@
 			<key>Window Type</key>
 			<integer>2</integer>
 			<key>Working Directory</key>
-			<string>/Users/lucas</string>
+			<string>/Users/theoretick</string>
 		</dict>
 		<dict>
 			<key>ASCII Anti Aliased</key>
@@ -2358,7 +2360,7 @@
 			<key>Blink Allowed</key>
 			<false/>
 			<key>Blinking Cursor</key>
-			<false/>
+			<true/>
 			<key>Blur</key>
 			<true/>
 			<key>Blur Radius</key>
@@ -2403,7 +2405,7 @@
 				<real>1</real>
 			</dict>
 			<key>Cursor Type</key>
-			<integer>2</integer>
+			<integer>1</integer>
 			<key>Custom Command</key>
 			<string>No</string>
 			<key>Custom Directory</key>
@@ -2716,7 +2718,7 @@
 			<key>Log Directory</key>
 			<string></string>
 			<key>Minimum Contrast</key>
-			<real>0.0</real>
+			<real>0.48425138449367089</real>
 			<key>Mouse Reporting</key>
 			<true/>
 			<key>Name</key>
@@ -2888,7 +2890,7 @@
 			<key>Use Bold Font</key>
 			<true/>
 			<key>Use Bright Bold</key>
-			<true/>
+			<false/>
 			<key>Use Canonical Parser</key>
 			<false/>
 			<key>Use Italic Font</key>
@@ -2900,7 +2902,7 @@
 			<key>Window Type</key>
 			<integer>2</integer>
 			<key>Working Directory</key>
-			<string>/Users/lucas</string>
+			<string>/Users/theoretick</string>
 		</dict>
 		<dict>
 			<key>ASCII Anti Aliased</key>
@@ -3075,7 +3077,7 @@
 			<key>Blink Allowed</key>
 			<false/>
 			<key>Blinking Cursor</key>
-			<false/>
+			<true/>
 			<key>Blur</key>
 			<true/>
 			<key>Blur Radius</key>
@@ -3116,7 +3118,7 @@
 				<real>0.91611063480377197</real>
 			</dict>
 			<key>Cursor Type</key>
-			<integer>2</integer>
+			<integer>1</integer>
 			<key>Custom Command</key>
 			<string>No</string>
 			<key>Custom Directory</key>
@@ -3601,7 +3603,7 @@
 			<key>Use Bold Font</key>
 			<true/>
 			<key>Use Bright Bold</key>
-			<true/>
+			<false/>
 			<key>Use Canonical Parser</key>
 			<false/>
 			<key>Use Italic Font</key>
@@ -3613,19 +3615,23 @@
 			<key>Window Type</key>
 			<integer>2</integer>
 			<key>Working Directory</key>
-			<string>/Users/lucas</string>
+			<string>/Users/theoretick</string>
 		</dict>
 	</array>
-	<key>NoSyncCommandHistoryHasEverBeenUsed</key>
+	<key>NoSyncConfirmBeta</key>
 	<true/>
+	<key>NoSyncInstallationId</key>
+	<string>700C1901-012A-4801-A471-33A44BCC92A3</string>
 	<key>NoSyncTimeOfFirstLaunchOfVersionWithTip</key>
-	<real>466880088.61857897</real>
+	<real>487894620.88511503</real>
 	<key>OnlyWhenMoreTabs</key>
 	<true/>
 	<key>OpenArrangementAtStartup</key>
 	<false/>
 	<key>OpenBookmark</key>
 	<false/>
+	<key>OpenNoWindowsAtStartup</key>
+	<true/>
 	<key>OpenTmuxWindowsIn</key>
 	<integer>0</integer>
 	<key>PMPrintingExpandedStateForPrint2</key>
@@ -3634,6 +3640,8 @@
 	<false/>
 	<key>PasteFromClipboard</key>
 	<false/>
+	<key>PasteTabToStringTabStopSize</key>
+	<integer>4</integer>
 	<key>PointerActions</key>
 	<dict>
 		<key>Button,1,1,,</key>
@@ -3668,7 +3676,9 @@
 		</dict>
 	</dict>
 	<key>PrefsCustomFolder</key>
-	<string>/Users/theoretick/code/dotfiles.git/iterm-config</string>
+	<string>/Users/theoretick/code/dotfiles/iterm-config</string>
+	<key>Print In Black And White</key>
+	<true/>
 	<key>PromptOnQuit</key>
 	<true/>
 	<key>QuitWhenAllWindowsClosed</key>
@@ -3682,13 +3692,17 @@
 	<key>SUFeedAlternateAppNameKey</key>
 	<string>iTerm</string>
 	<key>SUFeedURL</key>
-	<string>https://iterm2.com/appcasts/nightly.xml</string>
+	<string>https://iterm2.com/appcasts/testing.xml?shard=82</string>
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2015-10-18T17:14:24Z</date>
+	<date>2016-06-18T18:11:04Z</date>
+	<key>SUSendProfileInfo</key>
+	<false/>
 	<key>SavePasteHistory</key>
 	<false/>
+	<key>Selection Respects Soft Boundaries</key>
+	<true/>
 	<key>Show Toolbelt</key>
 	<false/>
 	<key>ShowBookmarkName</key>
@@ -6788,7 +6802,7 @@
 	<key>findRegex_iTerm</key>
 	<false/>
 	<key>iTerm Version</key>
-	<string>2.9.20151018-nightly</string>
+	<string>3.0.2</string>
 	<key>kCommandHistoryHasEverBeenUsed</key>
 	<true/>
 </dict>

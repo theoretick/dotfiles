@@ -27,3 +27,9 @@ export HISTCONTROL=ignoreboth
 
 # add postgres to path
 export PATH="/Applications/Postgres.app/Contents/MacOS/bin:$PATH"
+
+# Use FZF for Ctrl+R reverse searches
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
+# Eval docker env variables
+eval $(docker-machine env)

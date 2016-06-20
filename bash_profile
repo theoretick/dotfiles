@@ -19,18 +19,6 @@ if [ -f ~/.git-completion.bash ]; then
   . ~/.git-completion.bash
 fi
 
-if which rbenv > /dev/null; then
-    eval "$(rbenv init -)";
-else
-    echo "rbenv not installed"
-fi
-
-if which dinghy > /dev/null; then
-  eval "$(dinghy shellinit)"
-else
-  echo "dinghy not installed"
-fi
-
 # monkeyhack to include bashrc as well
 [[ -r ~/.bashrc ]] && . ~/.bashrc
 

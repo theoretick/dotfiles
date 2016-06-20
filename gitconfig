@@ -5,12 +5,11 @@
 [user]
   name = theoretick
   user = theoretick
-	email = me@lucascharles.me
+  email = me@lucascharles.me
 [credential]
   helper = osxkeychain
 [push]
   default = simple
-
 [color]
 	ui = auto
 [color "branch"]
@@ -28,12 +27,10 @@
 
 [alias]
   lg1 = log --pretty=oneline --abbrev-commit --branches=* --graph --decorate --color
-  wc1 = whatchanged --graph --abbrev-commit --decorate --date=relative --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all
+  wc1 = whatchanged --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)' --all
   lg2 = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)' --all
-  wc2 = whatchanged --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n''          %C(white)%s%C(reset) %C(dim white)- %an%C(reset)' --all
   lg3 = log --graph --date-order -C -M --pretty=format:"<%h> %ad [%an] %Cgreen%d%Creset %s" --all --date=short
-  wc3 = whatchanged --graph --date-order -C -M --pretty=format:"<%h> %ad [%an] %Cgreen%d%Creset %s" --all --date=short
   lg = !"git wc2"
   wc = !"git wc1"
-  update = pull upstream master
+  update = pull origin master
   uncommit = git reset --soft HEAD~1

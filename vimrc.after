@@ -1,39 +1,26 @@
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" used by Janus for extra settings, along w/ .janus directory
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-" This makes RVM work inside Vim. I have no idea why.
-set shell=bash
+" Vundle setup yo
+source ~/.vim/vundle.vim
 
-" Prevent Vim from clobbering the scrollback buffer. See
-" http://www.shallowsky.com/linux/noaltscreen.html
-set t_ti= t_te=
+syntax on
 
-" If a file is changed outside of vim, automatically reload it without asking
-set autoread
-
-" keep 2 visible lines below cursor at all times
-" janus' default is only 1 (i think...)
-set scrolloff=3
-
-"""
-set nocompatible
+let mapleader = ","
+set backspace=indent,eol,start
+set scrolloff=3   " keep 2 visible lines below cursor at all times
+set encoding=utf-8
 set ruler
 set showcmd
-" show cursor position w/ horiz line
-set cursorline
-
-" Puts a line on column 80 of the screen. This is a good indicator for methods
-" that are too long
-set colorcolumn=80
+set cursorline " show cursor position w/ horiz line
+set smartcase
+set number
 
 " enable automatic title setting for terminals
 set title
 set titleold="Terminal"
 set titlestring=%F
 
-" Set encoding
-set encoding=utf-8
+" If a file is changed outside of vim, auto reload it
+set autoread
 
 " Whitespace stuff
 set nowrap
@@ -46,18 +33,9 @@ set expandtab
 " Disables autoindent for current file
 nnoremap <F8> :setl noai nocin nosi inde=<CR>
 
-" Execute the current file with leader-r
-nnoremap <leader>r :!%:p<Enter>
-
-" Tab completion
-set wildmode=list:longest,list:full
-set wildignore+=*/.vagrant/*,*/.bundle/*,*.o,*.obj,.git,*.rbc
-
 " Thorfile, Rakefile, Vagrantfile and Gemfile are Ruby
-au BufRead,BufNewFile {Gemfile,Rakefile,Vagrantfile,Thorfile,config.ru}    set ft=ruby
-
-" make python follow PEP8 ( http://www.python.org/dev/peps/pep-0008/ )
-au FileType python  set tabstop=4 textwidth=79
+au BufRead,BufNewFile {Gemfile,Rakefile,Vagrantfile,Thorfile,config.ru} set ft=ruby
+au BufRead,BufNewFile {vimrc.after} setf vim
 
 " Save a file as root (,W)
 noremap <leader>W :w !sudo tee % > /dev/null<CR>
@@ -66,14 +44,21 @@ noremap <leader>W :w !sudo tee % > /dev/null<CR>
 " COLOR
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set t_Co=256 " 256 colors
-set background=dark
 colorscheme solarized
-highlight clear SignColumn " clear sign-column for vim-gitgutter
+set hlsearch
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" STATUS LINE
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-:set statusline=%<%f\ (%{&ft})\ %-4(%m%)%=%-19(%3l,%02c%03V%)
+set background=dark
+let g:background_color = 0 " defaults to dark, so dark == 0
+
+function! ToggleColor()
+  if (g:background_color)
+    set background=dark
+    let g:background_color = 0
+  else
+    set background=light
+    let g:background_color = 1
+  endif
+endfunc
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " MISCELLANEOUS KEYMAPS
@@ -91,27 +76,24 @@ nnoremap <CR> :noh<CR><CR>
 inoremap jj <ESC>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" CtrlP settings
+" use fzf for file search
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" CtrlP should only search tracked files
-let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files']
 
-" Sane Ignore For ctrlp
-let g:ctrlp_custom_ignore = {
-  \ 'dir':  '\.git$\|\.hg$\|\.svn$\|\.yardoc\|public\/images\|public\/system\|data\|log\|tmp$',
-  \ 'file': '\.exe$\|\.so$\|\.dat$'
-  \ }
+set rtp+=/usr/local/opt/fzf/
 
-" default behavior set to open-in-tab
-let g:ctrlp_prompt_mappings = {
-    \ 'AcceptSelection("e")': ['<c-t>'],
-    \ 'AcceptSelection("t")': ['<cr>', '<2-LeftMouse>'],
-    \ }
+noremap <c-p> :FZF<cr>
 
-" Normal CtrlP
-" nnoremap <silent> <Leader>t :CtrlP<cr>
-" Flush then CtrlP
-nnoremap <silent> <leader>t :ClearCtrlPCache<cr>\|:CtrlP<cr>
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Syntastic config
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " MULTIPURPOSE TAB KEY
@@ -127,13 +109,4 @@ function! InsertTabWrapper()
 endfunction
 inoremap <tab> <c-r>=InsertTabWrapper()<cr>
 inoremap <s-tab> <c-n>
-
-" ================ Persistent Undo ==================
-" Keep undo history across sessions, by storing in file.
-" Only works all the time.
-if has('persistent_undo')
-  silent !mkdir ~/.vim/backups > /dev/null 2>&1
-  set undodir=~/.vim/backups
-  set undofile
-endif
 
